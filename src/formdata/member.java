@@ -94,7 +94,7 @@ public class member extends javax.swing.JFrame {
         bClear = new javax.swing.JButton();
         bCari = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 153));
 
@@ -385,7 +385,7 @@ public class member extends javax.swing.JFrame {
             try{
             Statement stat = conn.createStatement();
             ResultSet res = stat.executeQuery(sql);
-            while(res.next()){
+            if(res.next()){
                 String a = res.getString("nama_member");
                 String b = res.getString("no_telp");
                 String c = res.getString("jenis_kelamin");
@@ -398,6 +398,8 @@ public class member extends javax.swing.JFrame {
                 cJenisMember.setSelectedItem(d);
                 dcTglDaftar.setDate(java.sql.Date.valueOf(e));
                 dcHabisMember.setDate(java.sql.Date.valueOf(f));
+            }else{
+                reset();
             }
             } catch (SQLException ex) {
                 Logger.getLogger(member.class.getName()).log(Level.SEVERE, null, ex);

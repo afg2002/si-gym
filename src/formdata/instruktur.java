@@ -103,7 +103,7 @@ public class instruktur extends javax.swing.JFrame {
 
         jRadioButton1.setText("jRadioButton1");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 153));
 
@@ -202,7 +202,7 @@ public class instruktur extends javax.swing.JFrame {
 
         tJK.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "== Pilih Jenis Kelamin ==", "Laki-laki", "Perempuan" }));
 
-        tBidang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "== Pilih Bidang == ", "Yoga", "Powerlifting" }));
+        tBidang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "== Pilih Bidang == ", "Yoga", "Zumba", "Pilates", "Boxing", "Cycling", "Swimming", "Fitness", "Dance", "Martial Arts" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -348,7 +348,7 @@ public class instruktur extends javax.swing.JFrame {
             try{
             Statement stat = conn.createStatement();
             ResultSet res = stat.executeQuery(sql);
-            while(res.next()){
+            if(res.next()){
                 String a = res.getString("nama_instruktur");
                 String b = res.getString("no_telp");
                 String c = res.getString("jenis_kelamin");
@@ -361,6 +361,8 @@ public class instruktur extends javax.swing.JFrame {
                 tBidang.setSelectedItem(d);
                 tEmail.setText(e);
                 tTanggalJoin.setDate(f);
+            }else{
+                reset();
             }
             } catch (SQLException ex) {
                 Logger.getLogger(member.class.getName()).log(Level.SEVERE, null, ex);

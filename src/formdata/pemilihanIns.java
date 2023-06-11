@@ -106,7 +106,7 @@ public class pemilihanIns extends javax.swing.JFrame {
 
         jRadioButton1.setText("jRadioButton1");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 153));
 
@@ -384,7 +384,7 @@ public class pemilihanIns extends javax.swing.JFrame {
             try{
             Statement stat = conn.createStatement();
             ResultSet res = stat.executeQuery(sql);
-            while(res.next()){
+            if(res.next()){
                 String a = res.getString("id_instruktur");
                 String b = res.getString("nama_instruktur");
                 String c = res.getString("id_member");
@@ -396,6 +396,8 @@ public class pemilihanIns extends javax.swing.JFrame {
                 tIDMember.setText(c);
                 tNama1.setText(d);
                 tBidang.setSelectedItem(e);
+            }else{
+                reset();
             }
             } catch (SQLException ex) {
                 Logger.getLogger(member.class.getName()).log(Level.SEVERE, null, ex);

@@ -9,7 +9,7 @@
     </Component>
   </NonVisualComponents>
   <Properties>
-    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -283,8 +283,11 @@
     </Container>
     <Component class="javax.swing.JButton" name="bCetak">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Cetak"/>
+        <Property name="text" type="java.lang.String" value="Cetak Nota"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bCetakActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="bClear">
       <Properties>

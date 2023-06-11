@@ -103,7 +103,7 @@ public class alatGym extends javax.swing.JFrame {
 
         jRadioButton1.setText("jRadioButton1");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 153));
 
@@ -344,7 +344,7 @@ public class alatGym extends javax.swing.JFrame {
             try{
             Statement stat = conn.createStatement();
             ResultSet res = stat.executeQuery(sql);
-            while(res.next()){
+            if(res.next()){
                 String a = res.getString("nama_alat");
                 String b = res.getString("jenis_alat");
                 String c = res.getString("kegunaan");
@@ -357,6 +357,8 @@ public class alatGym extends javax.swing.JFrame {
                 tHarga.setText(d);
                 tStok.setText(e);
                 tTanggalBeli.setDate(f);
+            }else{
+                reset();
             }
             } catch (SQLException ex) {
                 Logger.getLogger(member.class.getName()).log(Level.SEVERE, null, ex);

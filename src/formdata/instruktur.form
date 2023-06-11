@@ -9,7 +9,7 @@
     </Component>
   </NonVisualComponents>
   <Properties>
-    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -328,10 +328,17 @@
     <Component class="javax.swing.JComboBox" name="tBidang">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="3">
+          <StringArray count="10">
             <StringItem index="0" value="== Pilih Bidang == "/>
             <StringItem index="1" value="Yoga"/>
-            <StringItem index="2" value="Powerlifting"/>
+            <StringItem index="2" value="Zumba"/>
+            <StringItem index="3" value="Pilates"/>
+            <StringItem index="4" value="Boxing"/>
+            <StringItem index="5" value="Cycling"/>
+            <StringItem index="6" value="Swimming"/>
+            <StringItem index="7" value="Fitness"/>
+            <StringItem index="8" value="Dance"/>
+            <StringItem index="9" value="Martial Arts"/>
           </StringArray>
         </Property>
       </Properties>

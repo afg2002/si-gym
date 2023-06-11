@@ -1,3 +1,10 @@
+
+import formdata.absensi;
+import formdata.alatGym;
+import formdata.instruktur;
+import formdata.karyawan;
+import formdata.member;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -28,11 +35,11 @@ public class Menu extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        mMember = new javax.swing.JMenuItem();
+        mKaryawan = new javax.swing.JMenuItem();
+        mAlatGym = new javax.swing.JMenuItem();
+        mInstruktur = new javax.swing.JMenuItem();
+        mAbsensi = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
@@ -51,30 +58,45 @@ public class Menu extends javax.swing.JFrame {
 
         jMenu1.setText("Master");
 
-        jMenuItem1.setText("Member");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        mMember.setText("Member");
+        mMember.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                mMemberActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        jMenu1.add(mMember);
 
-        jMenuItem2.setText("Karyawan");
-        jMenu1.add(jMenuItem2);
-
-        jMenuItem3.setText("Alat Gym");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        mKaryawan.setText("Karyawan");
+        mKaryawan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                mKaryawanActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem3);
+        jMenu1.add(mKaryawan);
 
-        jMenuItem4.setText("Instruktur");
-        jMenu1.add(jMenuItem4);
+        mAlatGym.setText("Alat Gym");
+        mAlatGym.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mAlatGymActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mAlatGym);
 
-        jMenuItem5.setText("Absensi");
-        jMenu1.add(jMenuItem5);
+        mInstruktur.setText("Instruktur");
+        mInstruktur.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mInstrukturActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mInstruktur);
+
+        mAbsensi.setText("Absensi");
+        mAbsensi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mAbsensiActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mAbsensi);
 
         jMenuBar1.add(jMenu1);
 
@@ -128,13 +150,30 @@ public class Menu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    private void mMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mMemberActionPerformed
+        member member = new member();
+        member.setVisible(true);
+    }//GEN-LAST:event_mMemberActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    private void mAlatGymActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mAlatGymActionPerformed
+      alatGym alatgym = new alatGym();
+      alatgym.setVisible(true);
+    }//GEN-LAST:event_mAlatGymActionPerformed
+
+    private void mKaryawanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mKaryawanActionPerformed
+        karyawan karyawan = new karyawan();
+        karyawan.setVisible(true);
+    }//GEN-LAST:event_mKaryawanActionPerformed
+
+    private void mInstrukturActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mInstrukturActionPerformed
+       instruktur ins = new instruktur();
+       ins.setVisible(true);
+    }//GEN-LAST:event_mInstrukturActionPerformed
+
+    private void mAbsensiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mAbsensiActionPerformed
+        absensi abs = new absensi();
+        abs.setVisible(true);
+    }//GEN-LAST:event_mAbsensiActionPerformed
 
     /**
      * @param args the command line arguments
@@ -179,15 +218,15 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JMenuItem mAbsensi;
+    private javax.swing.JMenuItem mAlatGym;
+    private javax.swing.JMenuItem mInstruktur;
+    private javax.swing.JMenuItem mKaryawan;
+    private javax.swing.JMenuItem mMember;
     // End of variables declaration//GEN-END:variables
 }

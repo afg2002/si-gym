@@ -13,10 +13,19 @@ import java.sql.Statement;
 import java.util.Date;
 import java.util.UUID;
 import java.math.BigInteger;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -111,7 +120,7 @@ public class pembayaran extends javax.swing.JFrame {
 
         jRadioButton1.setText("jRadioButton1");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 153));
 
@@ -184,7 +193,12 @@ public class pembayaran extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tabPembayaran);
 
-        bCetak.setText("Cetak");
+        bCetak.setText("Cetak Nota");
+        bCetak.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bCetakActionPerformed(evt);
+            }
+        });
 
         bClear.setText("Clear");
         bClear.addActionListener(new java.awt.event.ActionListener() {
@@ -417,6 +431,8 @@ public class pembayaran extends javax.swing.JFrame {
                 tTotalBiaya.setText(e);
                 tCash.setText(f);
                 tKembalian.setText(g);
+            }else{
+                reset();
             }
             } catch (SQLException ex) {
                 Logger.getLogger(member.class.getName()).log(Level.SEVERE, null, ex);
@@ -509,6 +525,22 @@ public class pembayaran extends javax.swing.JFrame {
         int kembalian = cash-total;
         tKembalian.setText(String.valueOf(kembalian));
     }//GEN-LAST:event_bHKActionPerformed
+
+    private void bCetakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCetakActionPerformed
+        String path =".\\src\\laporan\\buktipembayaran.jasper";
+        JasperReport reports; 
+        Map<String, Object> parameters = new HashMap<>();
+        parameters.put("id_transaksi", tIDTransaksi.getText());
+        try {
+            reports = (JasperReport) JRLoader.loadObjectFromFile(path);
+            JasperPrint jprint = JasperFillManager.fillReport(path, parameters,conn);
+            JasperViewer jviewer = new JasperViewer(jprint,false);
+            jviewer.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            jviewer.setVisible(true);
+        } catch (JRException ex) {
+            Logger.getLogger(pembayaran.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_bCetakActionPerformed
 
     /**
      * @param args the command line arguments

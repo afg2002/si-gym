@@ -101,7 +101,7 @@ public class karyawan extends javax.swing.JFrame {
 
         jRadioButton1.setText("jRadioButton1");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 153));
 
@@ -134,7 +134,7 @@ public class karyawan extends javax.swing.JFrame {
 
         jLabel6.setText("Jabatan");
 
-        cJabatan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "== Pilih Jabatan ==", "Kasir", "Office Boy" }));
+        cJabatan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "== Pilih Jabatan ==", "SuperVisor", "Manager", "Staff", "Kasir", "Office Boy" }));
 
         jLabel7.setText("Email");
 
@@ -334,7 +334,7 @@ public class karyawan extends javax.swing.JFrame {
             try{
             Statement stat = conn.createStatement();
             ResultSet res = stat.executeQuery(sql);
-            while(res.next()){
+            if(res.next()){
                 String a = res.getString("nama_karyawan");
                 String b = res.getString("no_telp");
                 String c = res.getString("jenis_kelamin");
@@ -347,6 +347,8 @@ public class karyawan extends javax.swing.JFrame {
                 cJabatan.setSelectedItem(d);
                 tEmail.setText(e);
                 dcTglBekerja.setDate(f);
+            }else{
+                reset();
             }
             } catch (SQLException ex) {
                 Logger.getLogger(member.class.getName()).log(Level.SEVERE, null, ex);

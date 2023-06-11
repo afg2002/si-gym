@@ -117,6 +117,7 @@ public class pembayaran extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         tKembalian = new javax.swing.JTextField();
         bHK = new javax.swing.JButton();
+        bCetak1 = new javax.swing.JButton();
 
         jRadioButton1.setText("jRadioButton1");
 
@@ -255,6 +256,13 @@ public class pembayaran extends javax.swing.JFrame {
             }
         });
 
+        bCetak1.setText("Cetak Laporan");
+        bCetak1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bCetak1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -310,7 +318,8 @@ public class pembayaran extends javax.swing.JFrame {
                         .addComponent(bCetak)
                         .addGap(18, 18, 18)
                         .addComponent(bClear))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 529, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 529, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bCetak1))
                 .addGap(75, 75, 75))
         );
         layout.setVerticalGroup(
@@ -368,8 +377,10 @@ public class pembayaran extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(bCetak)
-                            .addComponent(bClear))))
-                .addContainerGap(148, Short.MAX_VALUE))
+                            .addComponent(bClear))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(bCetak1)))
+                .addContainerGap(114, Short.MAX_VALUE))
         );
 
         pack();
@@ -542,6 +553,20 @@ public class pembayaran extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_bCetakActionPerformed
 
+    private void bCetak1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCetak1ActionPerformed
+       String path =".\\src\\laporan\\pembayaran.jasper";
+        JasperReport reports; 
+        try {
+            reports = (JasperReport) JRLoader.loadObjectFromFile(path);
+            JasperPrint jprint = JasperFillManager.fillReport(path, null,conn);
+            JasperViewer jviewer = new JasperViewer(jprint,false);
+            jviewer.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            jviewer.setVisible(true);
+        } catch (JRException ex) {
+            Logger.getLogger(pembayaran.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_bCetak1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -557,6 +582,7 @@ public class pembayaran extends javax.swing.JFrame {
     private javax.swing.JButton bCariMember;
     private javax.swing.JButton bCariTrans;
     private javax.swing.JButton bCetak;
+    private javax.swing.JButton bCetak1;
     private javax.swing.JButton bClear;
     private javax.swing.JButton bEdit;
     private javax.swing.JButton bExit;

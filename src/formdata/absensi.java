@@ -15,7 +15,14 @@ import java.util.UUID;
 import java.math.BigInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -139,7 +146,7 @@ public class absensi extends javax.swing.JFrame {
 
         jLabel7.setText("Jam Masuk");
 
-        jLabel8.setText("Tangal Masuk");
+        jLabel8.setText("Tanggal");
 
         bTambah.setText("Tambah");
         bTambah.addActionListener(new java.awt.event.ActionListener() {
@@ -188,6 +195,11 @@ public class absensi extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tabInstruktur);
 
         bCetak.setText("Cetak");
+        bCetak.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bCetakActionPerformed(evt);
+            }
+        });
 
         bClear.setText("Clear");
         bClear.addActionListener(new java.awt.event.ActionListener() {
@@ -461,6 +473,20 @@ public class absensi extends javax.swing.JFrame {
     private void tIDMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tIDMemberActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tIDMemberActionPerformed
+
+    private void bCetakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCetakActionPerformed
+        String path =".\\src\\laporan\\absensi.jasper";
+        JasperReport reports; 
+        try {
+            reports = (JasperReport) JRLoader.loadObjectFromFile(path);
+            JasperPrint jprint = JasperFillManager.fillReport(path, null,conn);
+            JasperViewer jviewer = new JasperViewer(jprint,false);
+            jviewer.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            jviewer.setVisible(true);
+        } catch (JRException ex) {
+            Logger.getLogger(pembayaran.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_bCetakActionPerformed
 
     /**
      * @param args the command line arguments

@@ -48,30 +48,26 @@
 	</background>
 	<title>
 		<band height="159" splitType="Stretch">
-			<image>
-				<reportElement x="53" y="15" width="119" height="122" uuid="941f0d9c-bbb1-4433-98be-ae8c9172ca41"/>
-				<imageExpression><![CDATA["icons8-gym-100.png"]]></imageExpression>
-			</image>
 			<staticText>
 				<reportElement style="Title" x="264" y="38" width="106" height="35" uuid="82eaf09c-216a-4101-bffa-724442df7921"/>
 				<textElement verticalAlignment="Middle">
 					<font size="14" pdfFontName="Times-Roman"/>
 				</textElement>
-				<text><![CDATA[MARK'S GYM]]></text>
+				<text><![CDATA[Nevaquit Gym]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="SubTitle" x="281" y="73" width="66" height="22" uuid="83d5dd59-d0d9-4ef3-8dec-0695cbc43788"/>
 				<textElement>
 					<font fontName="Times New Roman" pdfFontName="Times-Roman"/>
 				</textElement>
-				<text><![CDATA[Gedong]]></text>
+				<text><![CDATA[Depok]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="194" y="95" width="249" height="42" uuid="5a8666a0-12d7-468d-9d66-b20627c752ae"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="10"/>
 				</textElement>
-				<text><![CDATA[JL. H. Taman No.13 RT/RW 003/009 Kel. Gedong Kec. Pasar Rebo, Jakarta Timur 13760 (samping cahaya gedong residen)]]></text>
+				<text><![CDATA[Jl. Kemang Raya, Sukmajaya, Kec. Sukmajaya, Kota Depok, Jawa Barat 16412]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Title" x="239" y="15" width="177" height="23" uuid="b9991f7c-2936-4d61-814b-bf698534a618"/>
@@ -86,6 +82,10 @@
 					<pen lineWidth="0.5" lineColor="#999999"/>
 				</graphicElement>
 			</line>
+			<image>
+				<reportElement x="37" y="0" width="225" height="137" uuid="d823741b-2819-420f-a5f1-3f35ac11349d"/>
+				<imageExpression><![CDATA["C:\\Users\\afgha\\Documents\\NetBeansProjects\\SIGym\\src\\laporan\\icon.jpg"]]></imageExpression>
+			</image>
 		</band>
 	</title>
 	<pageHeader>

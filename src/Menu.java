@@ -4,6 +4,20 @@ import formdata.alatGym;
 import formdata.instruktur;
 import formdata.karyawan;
 import formdata.member;
+import formdata.pembayaran;
+import formdata.pemilihanIns;
+import java.sql.Connection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -15,7 +29,7 @@ import formdata.member;
  * @author afgha
  */
 public class Menu extends javax.swing.JFrame {
-
+    private Connection conn = new helper.database().connect();
     /**
      * Creates new form Menu
      */
@@ -40,13 +54,8 @@ public class Menu extends javax.swing.JFrame {
         mAlatGym = new javax.swing.JMenuItem();
         mInstruktur = new javax.swing.JMenuItem();
         mAbsensi = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        jMenuItem8 = new javax.swing.JMenuItem();
-        jMenuItem9 = new javax.swing.JMenuItem();
-        jMenuItem10 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
 
@@ -98,34 +107,38 @@ public class Menu extends javax.swing.JFrame {
         });
         jMenu1.add(mAbsensi);
 
+        jMenuItem1.setText("Pemilian Instruktur");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Transaksi");
+        jMenu2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu2MouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenu2);
 
-        jMenu3.setText("Report");
-
-        jMenuItem6.setText("Member");
-        jMenu3.add(jMenuItem6);
-
-        jMenuItem7.setText("Karyawan");
-        jMenu3.add(jMenuItem7);
-
-        jMenuItem8.setText("Alat Gym");
-        jMenu3.add(jMenuItem8);
-
-        jMenuItem9.setText("Instruktur");
-        jMenu3.add(jMenuItem9);
-
-        jMenuItem10.setText("Absensi");
-        jMenu3.add(jMenuItem10);
-
-        jMenuBar1.add(jMenu3);
-
         jMenu4.setText("Logout");
+        jMenu4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu4MouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenu4);
 
         jMenu5.setText("Exit");
+        jMenu5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu5MouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenu5);
 
         setJMenuBar(jMenuBar1);
@@ -175,6 +188,26 @@ public class Menu extends javax.swing.JFrame {
         abs.setVisible(true);
     }//GEN-LAST:event_mAbsensiActionPerformed
 
+    private void jMenu5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu5MouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_jMenu5MouseClicked
+
+    private void jMenu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu4MouseClicked
+        this.dispose();
+        Login login = new Login();
+        login.setVisible(true);
+    }//GEN-LAST:event_jMenu4MouseClicked
+
+    private void jMenu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu2MouseClicked
+        pembayaran pmb = new pembayaran();
+        pmb.setVisible(true);
+    }//GEN-LAST:event_jMenu2MouseClicked
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        pemilihanIns pins = new pemilihanIns();
+        pins.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -214,15 +247,10 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem mAbsensi;
     private javax.swing.JMenuItem mAlatGym;
     private javax.swing.JMenuItem mInstruktur;

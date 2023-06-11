@@ -13,7 +13,14 @@ import java.sql.Statement;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -182,6 +189,11 @@ public class karyawan extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tabKaryawan);
 
         bCetak.setText("Cetak");
+        bCetak.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bCetakActionPerformed(evt);
+            }
+        });
 
         bClear.setText("Clear");
 
@@ -394,6 +406,20 @@ public class karyawan extends javax.swing.JFrame {
             Logger.getLogger(member.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_bEditActionPerformed
+
+    private void bCetakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCetakActionPerformed
+        String path =".\\src\\laporan\\karyawan.jasper";
+        JasperReport reports; 
+        try {
+            reports = (JasperReport) JRLoader.loadObjectFromFile(path);
+            JasperPrint jprint = JasperFillManager.fillReport(path, null,conn);
+            JasperViewer jviewer = new JasperViewer(jprint,false);
+            jviewer.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            jviewer.setVisible(true);
+        } catch (JRException ex) {
+            Logger.getLogger(pembayaran.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_bCetakActionPerformed
 
     /**
      * @param args the command line arguments

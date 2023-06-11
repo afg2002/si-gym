@@ -93,6 +93,7 @@
                       <Component id="bClear" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jScrollPane1" min="-2" pref="529" max="-2" attributes="0"/>
+                  <Component id="bCetak1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
           </Group>
@@ -166,9 +167,11 @@
                           <Component id="bCetak" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="bClear" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="bCetak1" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="148" max="32767" attributes="0"/>
+              <EmptySpace pref="114" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -375,6 +378,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bHKActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="bCetak1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cetak Laporan"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bCetak1ActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

@@ -47,21 +47,21 @@
 				<textElement verticalAlignment="Middle">
 					<font size="36" pdfFontName="Times-Roman"/>
 				</textElement>
-				<text><![CDATA[MARK'S GYM]]></text>
+				<text><![CDATA[Nevaquit Gym]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="SubTitle" x="257" y="51" width="66" height="22" uuid="83d5dd59-d0d9-4ef3-8dec-0695cbc43788"/>
 				<textElement>
 					<font fontName="Times New Roman" pdfFontName="Times-Roman"/>
 				</textElement>
-				<text><![CDATA[Gedong]]></text>
+				<text><![CDATA[Depok]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="170" y="73" width="249" height="42" uuid="5a8666a0-12d7-468d-9d66-b20627c752ae"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="10"/>
 				</textElement>
-				<text><![CDATA[JL. H. Taman No.13 RT/RW 003/009 Kel. Gedong Kec. Pasar Rebo, Jakarta Timur 13760 (samping cahaya gedong residen)]]></text>
+				<text><![CDATA[Jl. Kemang Raya, Sukmajaya, Kec. Sukmajaya, Kota Depok, Jawa Barat 16412]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="192" y="135" width="203" height="22" uuid="f3a31a9a-87f6-4c38-a31f-9a1cb5eb27c0"/>
@@ -74,8 +74,8 @@
 				<reportElement x="194" y="156" width="194" height="1" uuid="6b12f272-f705-4b2b-925f-996c806c7d15"/>
 			</line>
 			<image>
-				<reportElement x="14" y="0" width="156" height="122" uuid="4d2d5a69-21b1-40e3-a6e9-5f998abddabf"/>
-				<imageExpression><![CDATA["icons8-gym-100.png"]]></imageExpression>
+				<reportElement x="13" y="-1" width="147" height="157" uuid="50439dd2-2f4f-4e88-8860-f428f9d8d2d6"/>
+				<imageExpression><![CDATA["C:\\Users\\afgha\\Documents\\NetBeansProjects\\SIGym\\src\\laporan\\icon.jpg"]]></imageExpression>
 			</image>
 		</band>
 	</title>

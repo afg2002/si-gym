@@ -78,7 +78,7 @@
 			</line>
 			<image>
 				<reportElement x="18" y="5" width="225" height="135" uuid="4d634442-1554-4986-a9af-a491bd0e1dc1"/>
-				<imageExpression><![CDATA["C:\\Users\\afgha\\Documents\\NetBeansProjects\\SIGym\\src\\laporan\\icon.jpg"]]></imageExpression>
+				<imageExpression><![CDATA["icon.jpg"]]></imageExpression>
 			</image>
 		</band>
 	</title>

@@ -33,7 +33,7 @@ CREATE TABLE `absensi` (
   `hari_masuk` enum('Senin','Selasa','Rabu','Kamis','Jumat','Sabtu','Minggu') NOT NULL,
   `jam_masuk` varchar(50) NOT NULL,
   `tgl_masuk` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `absensi`
@@ -65,7 +65,7 @@ CREATE TABLE `alat_gym` (
   `harga_beli` int NOT NULL,
   `stok` int NOT NULL,
   `tgl_beli` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `alat_gym`
@@ -97,7 +97,7 @@ CREATE TABLE `instruktur` (
   `bidang` varchar(50) NOT NULL,
   `email` varchar(70) NOT NULL,
   `tanggal_join` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `instruktur`
@@ -129,7 +129,7 @@ CREATE TABLE `karyawan` (
   `jabatan` varchar(60) NOT NULL,
   `email` varchar(70) NOT NULL,
   `tgl_bekerja` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `karyawan`
@@ -162,7 +162,7 @@ CREATE TABLE `member` (
   `jenis_member` enum('Silver','Gold','Platinum') NOT NULL,
   `tgl_daftar` date NOT NULL,
   `habis_member` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `member`
@@ -195,7 +195,7 @@ CREATE TABLE `pembayaran` (
   `total_biaya` int NOT NULL,
   `cash` int NOT NULL,
   `kembalian` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `pembayaran`
@@ -222,10 +222,10 @@ INSERT INTO `pembayaran` (`id_transaksi`, `id_member`, `biaya_admin`, `biaya_bul
 
 CREATE TABLE `pemilihan` (
   `id_pemilihan` varchar(100) NOT NULL,
-  `id_instruktur` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `id_instruktur` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `id_member` int NOT NULL,
   `bidang` varchar(40) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -236,7 +236,7 @@ CREATE TABLE `pemilihan` (
 CREATE TABLE `user` (
   `username` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `user`

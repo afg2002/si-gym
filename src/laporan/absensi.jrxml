@@ -187,8 +187,8 @@
 	<columnFooter>
 		<band height="124" splitType="Stretch">
 			<textField pattern="EEEEE dd MMMMM yyyy">
-				<reportElement style="Column header" x="405" y="18" width="143" height="20" forecolor="#736343" uuid="1cbcfb53-7870-4f15-bb85-441475f23ee4"/>
-				<textElement verticalAlignment="Middle">
+				<reportElement style="Column header" x="404" y="18" width="141" height="20" forecolor="#736343" uuid="1cbcfb53-7870-4f15-bb85-441475f23ee4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="10" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Jakarta, "+new SimpleDateFormat("EEEE", new Locale("id", "ID")).format(new java.util.Date()) + "," + new SimpleDateFormat("dd MMMM yyyy", new Locale("id")).format(new java.util.Date())]]></textFieldExpression>

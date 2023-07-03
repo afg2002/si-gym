@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4e5e3ffe-b5c5-4e0f-b82a-d368780b5882">
 	<property name="ireport.zoom" value="1.4641000000000008"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="277"/>
 	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
 	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
 	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
@@ -49,32 +49,18 @@
 	<title>
 		<band height="159" splitType="Stretch">
 			<staticText>
-				<reportElement style="Title" x="264" y="38" width="106" height="35" uuid="82eaf09c-216a-4101-bffa-724442df7921"/>
+				<reportElement style="Title" x="182" y="58" width="323" height="35" uuid="82eaf09c-216a-4101-bffa-724442df7921"/>
 				<textElement verticalAlignment="Middle">
 					<font size="14" pdfFontName="Times-Roman"/>
 				</textElement>
-				<text><![CDATA[Nevaquit Gym]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="SubTitle" x="281" y="73" width="66" height="22" uuid="83d5dd59-d0d9-4ef3-8dec-0695cbc43788"/>
-				<textElement>
-					<font fontName="Times New Roman" pdfFontName="Times-Roman"/>
-				</textElement>
-				<text><![CDATA[Depok]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="194" y="95" width="249" height="42" uuid="5a8666a0-12d7-468d-9d66-b20627c752ae"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="10"/>
-				</textElement>
-				<text><![CDATA[Jl. Kemang Raya, Sukmajaya, Kec. Sukmajaya, Kota Depok, Jawa Barat 16412]]></text>
+				<text><![CDATA[Sistem Pendukung Keputusan Pemilihan Tempat Kost]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Title" x="239" y="15" width="177" height="23" uuid="b9991f7c-2936-4d61-814b-bf698534a618"/>
 				<textElement verticalAlignment="Middle">
 					<font size="14" pdfFontName="Times-Roman"/>
 				</textElement>
-				<text><![CDATA[BUKTI PEMBAYARAN]]></text>
+				<text><![CDATA[NOTA PEMBAYARAN]]></text>
 			</staticText>
 			<line>
 				<reportElement positionType="FixRelativeToBottom" x="5" y="148" width="555" height="1" uuid="c49124b0-0cf3-4905-b283-f951ae464f0f"/>
@@ -83,9 +69,16 @@
 				</graphicElement>
 			</line>
 			<image>
-				<reportElement x="37" y="0" width="225" height="137" uuid="d823741b-2819-420f-a5f1-3f35ac11349d"/>
-				<imageExpression><![CDATA["icon.jpg"]]></imageExpression>
+				<reportElement x="42" y="15" width="152" height="102" uuid="02aded9b-7d2e-4704-a265-1eedb3054cde"/>
+				<imageExpression><![CDATA["C:\\Users\\afgha\\Documents\\NetBeansProjects\\Kost\\src\\logo.jpg"]]></imageExpression>
 			</image>
+			<staticText>
+				<reportElement x="182" y="78" width="323" height="20" uuid="9488328b-0c10-45eb-ba7c-cdf89686de30"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Menggunakan Metode AHP Berbasis Java]]></text>
+			</staticText>
 		</band>
 	</title>
 	<pageHeader>
@@ -264,19 +257,19 @@
 	<columnFooter>
 		<band height="124" splitType="Stretch">
 			<textField pattern="EEEEE dd MMMMM yyyy">
-				<reportElement style="Column header" x="405" y="18" width="143" height="20" forecolor="#736343" uuid="1cbcfb53-7870-4f15-bb85-441475f23ee4"/>
-				<textElement verticalAlignment="Middle">
+				<reportElement style="Column header" x="405" y="16" width="141" height="20" forecolor="#736343" uuid="1115dbfa-759b-477c-b50c-a67674036e67"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="10" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Jakarta, "+new SimpleDateFormat("EEEE", new Locale("id", "ID")).format(new java.util.Date()) + "," + new SimpleDateFormat("dd MMMM yyyy", new Locale("id")).format(new java.util.Date())]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="393" y="38" width="159" height="20" uuid="e4bbeb4e-2b04-4e63-ba85-bcdeb128c7ef"/>
+				<reportElement x="394" y="36" width="159" height="20" uuid="5c371d43-bc81-4cb4-9b45-3a916c913934"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Pemilik Gym]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="395" y="104" width="159" height="20" uuid="cff7027f-5131-4db5-a05a-0ad07762108f"/>
+				<reportElement x="396" y="102" width="159" height="20" uuid="9413fa2f-12d9-49ad-b1b6-4a4a11d12908"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Julian Saputro]]></text>
 			</staticText>

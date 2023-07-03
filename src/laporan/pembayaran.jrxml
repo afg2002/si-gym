@@ -193,19 +193,19 @@
 	<columnFooter>
 		<band height="124" splitType="Stretch">
 			<textField pattern="EEEEE dd MMMMM yyyy">
-				<reportElement style="Column header" x="405" y="18" width="143" height="20" forecolor="#736343" uuid="1cbcfb53-7870-4f15-bb85-441475f23ee4"/>
-				<textElement verticalAlignment="Middle">
+				<reportElement style="Column header" x="405" y="18" width="141" height="20" forecolor="#736343" uuid="c548fed9-2007-4cd5-9829-0c0ec7054374"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="10" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Jakarta, "+new SimpleDateFormat("EEEE", new Locale("id", "ID")).format(new java.util.Date()) + "," + new SimpleDateFormat("dd MMMM yyyy", new Locale("id")).format(new java.util.Date())]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="393" y="38" width="159" height="20" uuid="e4bbeb4e-2b04-4e63-ba85-bcdeb128c7ef"/>
+				<reportElement x="394" y="38" width="159" height="20" uuid="116fe617-d17f-4c1c-9173-3932d6c9051a"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Pemilik Gym]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="395" y="104" width="159" height="20" uuid="cff7027f-5131-4db5-a05a-0ad07762108f"/>
+				<reportElement x="396" y="104" width="159" height="20" uuid="448656b0-a47f-4be1-8f57-5f197703142e"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Julian Saputro]]></text>
 			</staticText>
